@@ -4,8 +4,9 @@
 # 项目名称
 name = "tour-business-in-china"
 
-# Cloudflare Pages不需要main入口文件和compatibility_date
+# 兼容性日期 - Wrangler 4.x 必需
+compatibility_date = "2026-01-21"
 
-# 构建配置已经在package.json中定义，这里不需要重复定义
-
-# 移除了不支持的字段，Cloudflare Pages会自动使用package.json中的配置
+# 配置静态资产目录 - 指向构建输出目录
+[assets]
+directory = "./dist"

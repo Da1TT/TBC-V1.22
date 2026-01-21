@@ -10,7 +10,8 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "install:ci": "npm install --legacy-peer-deps",
-    "build:ci": "npm run build"
+    "build:ci": "npm run build",
+    "deploy": "wrangler deploy"
   },
   "engines": {
     "node": ">=18"
