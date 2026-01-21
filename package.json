@@ -10,8 +10,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "install:ci": "npm install --legacy-peer-deps",
-    "build:ci": "npm run build",
-    "build:cloudflare": "npm install && vite build"
+    "build:ci": "npm run build"
   },
   "engines": {
     "node": ">=18"
