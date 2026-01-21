@@ -1,0 +1,3 @@
+# Cloudflare Pages Redirects Configuration
+# For Single Page Applications (SPA)
+/* /index.html 200
