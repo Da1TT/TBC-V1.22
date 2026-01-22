@@ -11,12 +11,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* 优化性能的CSS变量 */
+  --primary-color: #dc2626;
+  --secondary-color: #fef2f2;
+  --text-color: #1e293b;
+  --background-color: #f8fafc;
 }
 
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  
+  /* 优化性能的背景色设置 */
+  background-color: var(--background-color);
+  
+  /* 减少重排的字体和颜色 */
+  color: var(--text-color);
+  font-family: inherit;
+  
+  /* 启用硬件加速 */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 #root {
@@ -31,6 +48,10 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  
+  /* 减少滚动卡顿 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* 防止内容溢出 */
@@ -43,4 +64,32 @@ body {
   margin: 0;
   padding: 0;
   font-family: inherit;
+}
+
+/* 优化性能的通用类 */
+.perf-optimized {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 延迟加载的图像占位符 */
+.img-placeholder {
+  background-color: #f1f5f9;
+  background-image: linear-gradient(45deg, #f1f5f9 25%, transparent 25%, transparent 50%, #f1f5f9 50%, #f1f5f9 75%, transparent 75%, transparent);
+  background-size: 16px 16px;
+  animation: placeholdershimmer 1s linear infinite;
+}
+
+@keyframes placeholdershimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+/* 减少字体闪烁 */
+.font-display {
+  font-display: swap;
 }

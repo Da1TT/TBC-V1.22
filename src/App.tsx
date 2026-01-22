@@ -14,6 +14,11 @@ export default function App() {
   // 初始化主题
   useTheme();
   
+  // 确保在DOM环境中运行
+  if (typeof window === 'undefined') {
+    return <div>Loading...</div>;
+  }
+  
   return (
     <LanguageProvider>
       <div className="flex flex-col min-h-screen">
