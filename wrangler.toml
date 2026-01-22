@@ -13,7 +13,7 @@ directory = "./dist"
 
 # 优化的构建设置
 [build]
-command = "npm run build"
+command = "npm run build:ci"
 publish = "./dist"
 
 # 减少初始加载时间的优化

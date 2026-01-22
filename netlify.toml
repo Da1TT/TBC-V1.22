@@ -1,7 +1,7 @@
 # Netlify Configuration - Simplified and Optimized
 [build]
-  # Use a more reliable build command with legacy peer deps
-  command = "npm install --legacy-peer-deps && npm run build"
+  # Use the project's CI install script to handle dependencies properly
+  command = "npm run install:ci && npm run build"
   # Publish directory
   publish = "dist"
   

@@ -11,7 +11,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "install:ci": "pnpm install --no-frozen-lockfile",
-    "build:ci": "npm run build:optimized",
+    "build:ci": "npm run install:ci && npm run build:optimized",
     "deploy": "wrangler deploy"
   },
   "engines": {
