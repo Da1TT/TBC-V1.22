@@ -11,7 +11,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "install:ci": "npm install --legacy-peer-deps",
     "build:ci": "npm run build",
-     "deploy": "wrangler pages deploy ./dist"
+      "deploy": "wrangler pages deploy ./dist --project-name=tour-business-in-china"
   },
   "engines": {
     "node": ">=18"

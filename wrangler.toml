@@ -1,12 +1,13 @@
- # Cloudflare Pages Configuration
-# 这个文件配置Cloudflare Pages的构建和部署设置
+ # Cloudflare Pages Configuration for Static Site
+# 静态网站的Cloudflare Pages配置
 
 # 项目名称
 name = "tour-business-in-china"
 
-# 兼容性日期 - Wrangler 4.x 必需
-compatibility_date = "2026-01-22"
+# 兼容性日期
+compatibility_date = "2026-01-23"
 
-# 配置静态资产目录 - 指向构建输出目录
+# 使用正确的静态网站部署配置
 [site]
 bucket = "./dist"
+# 移除自动生成的entry-point引用，这是针对Worker应用而非静态网站的
