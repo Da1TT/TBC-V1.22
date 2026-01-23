@@ -7,10 +7,6 @@ name = "tour-business-in-china"
 # 兼容性日期 - Wrangler 4.x 必需
 compatibility_date = "2026-01-22"
 
-# 主入口文件配置
-main = "./dist/index.html"
-
 # 配置静态资产目录 - 指向构建输出目录
 [site]
 bucket = "./dist"
-entry-point = "./"
