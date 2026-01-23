@@ -1,4 +1,4 @@
- # Cloudflare Pages Configuration for Static Site
+# Cloudflare Pages Configuration for Static Site
 # 静态网站的Cloudflare Pages配置
 
 # 项目名称
@@ -7,7 +7,5 @@ name = "tour-business-in-china"
 # 兼容性日期
 compatibility_date = "2026-01-23"
 
-# 使用正确的静态网站部署配置
-[site]
-bucket = "./dist"
-# 移除自动生成的entry-point引用，这是针对Worker应用而非静态网站的
+# 移除[site]配置块，因为对于静态网站，我们不需要这个配置
+# Cloudflare Pages会自动识别dist目录中的静态文件
