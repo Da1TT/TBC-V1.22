@@ -1,12 +1,12 @@
 # Netlify Configuration - Simplified and Optimized
 [build]
-  # Use the project's CI install script to handle dependencies properly
-  command = "npm run install:ci && npm run build"
+  # Use a more reliable build command with legacy peer deps
+  command = "npm install --legacy-peer-deps && npm run build"
   # Publish directory
   publish = "dist"
   
   # Environment variables to ensure proper Node version and dependency installation
-  environment = { NODE_VERSION = "18", NPM_CONFIG_PRODUCTION = "false", GENERATE_SOURCEMAP = "false" }
+  environment = { NODE_VERSION = "18", NPM_CONFIG_PRODUCTION = "false" }
 
 # Single Page Application redirect rules
 [[redirects]]
@@ -14,14 +14,3 @@
   to = "/index.html"
   status = 200
   force = true
-
-# 优化的性能设置
-[build.processing]
-  skip_processing = true
-  minify = {css = true, js = true, html = true}
-
-# 静态文件缓存规则
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Cache-Control = "public, max-age=600, must-revalidate"

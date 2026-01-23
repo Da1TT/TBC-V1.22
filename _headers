@@ -12,32 +12,21 @@
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   
-  # 减少CORS预检请求
-  Access-Control-Max-Age: 86400
-  
-  # 优化性能的头信息
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Feature-Policy: autoplay 'self'; camera 'none'; microphone 'none'; geolocation 'none'
-  
-  # 减少DNS查询时间
-  X-DNS-Prefetch-Control: on
+  # 内容安全策略(可选)
+  # Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' https://space.coze.cn; font-src 'self' https://cdnjs.cloudflare.com
 
-# 优化的缓存控制 - 为静态资源设置更合理的缓存策略
+# 静态资源的缓存控制 - 设置长期缓存
 /*.css
-  Cache-Control: public, max-age=604800, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.js
-  Cache-Control: public, max-age=604800, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.svg
-  Cache-Control: public, max-age=604800, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.png
-  Cache-Control: public, max-age=604800, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.jpg
-  Cache-Control: public, max-age=604800, immutable
-
-# HTML页面设置较短的缓存时间，确保用户总是获取最新内容
-/*.html
-  Cache-Control: public, max-age=600, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable

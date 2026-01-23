@@ -14,11 +14,6 @@ export default function App() {
   // 初始化主题
   useTheme();
   
-  // 确保在DOM环境中运行
-  if (typeof window === 'undefined') {
-    return <div>Loading...</div>;
-  }
-  
   return (
     <LanguageProvider>
       <div className="flex flex-col min-h-screen">
@@ -30,8 +25,14 @@ export default function App() {
             <Route path="/exhibitions" element={<Exhibitions />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            {/* 添加404路由以处理未找到的路径 */}
+             {/* 添加404路由以处理未找到的路径 */}
             <Route path="*" element={<Home />} />
+            
+            {/* 确保所有可能的嵌套路由也能正确处理 */}
+            <Route path="/contact/*" element={<Contact />} />
+            <Route path="/tours/*" element={<Tours />} />
+            <Route path="/exhibitions/*" element={<Exhibitions />} />
+            <Route path="/about/*" element={<About />} />
           </Routes>
         </main>
         <Footer />

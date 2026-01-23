@@ -1,9 +1,18 @@
-# Cloudflare Pages Redirects Configuration
-# 这个文件配置URL重定向规则
+ # Cloudflare Pages Redirects Configuration
+# 这个文件配置URL重定向规则，对于SPA应用至关重要
 
 # 单页应用(SPA)路由重定向 - 确保所有路径都返回index.html
-# 这对于使用客户端路由的React应用至关重要，可以防止页面刷新时出现404错误
+# 防止页面刷新时出现404错误
 /* /index.html 200
 
-# 优化的路由规则，确保更好的性能和兼容性
-/index.html /index.html 200
+# 确保所有子路径和深层嵌套路由都能正确路由
+/contact/* /index.html 200
+/tours/* /index.html 200
+/exhibitions/* /index.html 200
+/about/* /index.html 200
+
+# 强制使用HTTPS
+http://* https://$1 301
+
+# 添加对根域名的重定向支持
+/ /index.html 200
